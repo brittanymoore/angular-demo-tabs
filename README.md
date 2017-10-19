@@ -1,15 +1,14 @@
-# Radagast
+# Tabs Demo
 
-Radagast provides a sample wizard component written in Angular. The repo contains the source
-code for radagast as well as a test app using it. Everything is AOT-compatible.
+This is a demo of a simple tabbed layout using Angular.
 
 ## Getting Started
 
 ### Get the Code
 
 ```
-git clone https://github.com/brittanymoore/angular-radagast.git
-cd angular-radagast
+git clone https://github.com/brittanymoore/angular-demo-tabs.git
+cd angular-demo-tabs
 npm install
 ```
 
@@ -20,5 +19,3 @@ To run the app in development mode:
 ```
 npm run start
 ```
-
-Once the server is running, open a browser and navigate to localhost:3000.
