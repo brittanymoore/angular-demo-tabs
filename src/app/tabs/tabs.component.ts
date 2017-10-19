@@ -1,36 +1,18 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
-import { TabService } from './tabs.service';
-import { Tab } from './tab';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-tabs',
     templateUrl: './tabs.component.html',
-    styleUrls: ['./tabs.component.scss'],
-    providers: [ TabService ]
+    styleUrls: ['./tabs.component.scss']
 })
-export class TabsComponent implements OnInit, AfterViewInit {
+export class TabsComponent implements OnInit {
 
-    public tabs: Tab[] = [];
-    public activeTab: number = 0;
-
-    constructor(private tabService: TabService) { }
+    constructor(private router: Router) { }
 
     public ngOnInit(): void {
-        this.tabService.tabSource().subscribe((tab: Tab) => {
-            this.tabs.push(tab);
-        });
-    }
-
-    public ngAfterViewInit(): void {
-        if (this.tabs.length) {
-            this.tabService.activateTab(this.tabs[this.activeTab]);
-        }
-    }
-
-    public goToTab(tab: Tab): void {
-        this.activeTab = tab.id;
-        this.tabService.activateTab(tab);
+        this.router.navigate([{ outlets: { tabs: ['tab1'] }}]);
     }
 
 }

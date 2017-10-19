@@ -1,6 +1,7 @@
 <ul class="tab-headers">
-    <li class="tab-header" *ngFor="let tab of tabs" (click)="goToTab(tab)" [ngClass]="{'active': tab.id === activeTab}">{{tab.name}}</li>
+    <li class="tab-header" [routerLink]="[{ outlets: { tabs: ['tab1'] }}]">tab1</li>
+    <li class="tab-header" [routerLink]="[{ outlets: { tabs: ['tab2'] }}]">tab2</li>
 </ul>
 <div class="tab-content">
-    <ng-content></ng-content>
+    <router-outlet name="tabs"></router-outlet>
 </div>
