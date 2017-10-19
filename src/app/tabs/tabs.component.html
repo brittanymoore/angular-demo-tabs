@@ -1,0 +1,6 @@
+<ul class="tab-headers">
+    <li class="tab-header" *ngFor="let tab of tabs" (click)="goToTab(tab)" [ngClass]="{'active': tab.id === activeTab}">{{tab.name}}</li>
+</ul>
+<div class="tab-content">
+    <ng-content></ng-content>
+</div>
